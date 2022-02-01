@@ -75,6 +75,16 @@
                 android:layout_marginVertical="2dp"
                 android:scaleType="fitCenter"/>
 
+            <ImageButton
+                android:id="@+id/btnInfoLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="2dp"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btn_info_layout" />
+
         </LinearLayout>
 
         <!-- MAIN LAYOUT -->
@@ -86,898 +96,1023 @@
             android:background="#DBDBDB">
             <!--android:gravity="center"-->
 
+            <!-- HOME LAYOUT -->
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+
+            </LinearLayout>
+
+            <!-- SECTIONS LAYOUT -->
+            <LinearLayout
+                android:id="@+id/sectionsLayout"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="5"
-                android:gravity="top|center"
-                tools:ignore="NestedWeights"
-                android:paddingTop="30dp">
+                android:layout_height="fill_parent"
+                android:visibility="gone">
 
-                <!-- T LAYOUT -->
                 <LinearLayout
-                    android:id="@+id/tLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="5"
+                    android:gravity="top|center"
+                    tools:ignore="NestedWeights"
+                    android:paddingTop="30dp">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:src="@drawable/t_section_lettered"
-                        android:scaleType="fitCenter"/>
-
-                    <TableLayout
+                    <!-- T LAYOUT -->
+                    <LinearLayout
+                        android:id="@+id/tLayout"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:orientation="vertical">
 
-                        <TableRow>
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:src="@drawable/t_section_lettered"
+                            android:scaleType="fitCenter"/>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="x:"
-                                android:textColor="#8c8c8c" />
+                        <TableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
 
-                            <EditText
-                                android:id="@+id/TLayoutEntryX"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
+                            <TableRow>
 
-                        <TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="x:"
+                                    android:textColor="#8c8c8c" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="b:"
-                                android:textColor="#8c8c8c">
+                                <EditText
+                                    android:id="@+id/TLayoutEntryX"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
 
-                            </TextView>
+                            <TableRow>
 
-                            <EditText
-                                android:id="@+id/TLayoutEntryB"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="b:"
+                                    android:textColor="#8c8c8c">
 
-                        <TableRow>
+                                </TextView>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="y:"
-                                android:textColor="#8c8c8c">
+                                <EditText
+                                    android:id="@+id/TLayoutEntryB"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
 
-                            </TextView>
+                            <TableRow>
 
-                            <EditText
-                                android:id="@+id/TLayoutEntryY"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="y:"
+                                    android:textColor="#8c8c8c">
 
-                        <TableRow>
+                                </TextView>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="z:"
-                                android:textColor="#8c8c8c" />
+                                <EditText
+                                    android:id="@+id/TLayoutEntryY"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
 
-                            <EditText
-                                android:id="@+id/TLayoutEntryZ"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
+                            <TableRow>
 
-                    </TableLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="z:"
+                                    android:textColor="#8c8c8c" />
 
-                    <!--
+                                <EditText
+                                    android:id="@+id/TLayoutEntryZ"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                        </TableLayout>
+
+                        <!--
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Área"/>
+
+                                <TextView
+                                    android:id="@+id/txtResultArea"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </TableRow>
+
+                            <TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Perímetro"/>
+
+                                <TextView
+                                    android:id="@+id/txtResultPerimeter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </TableRow>
+
+                            <TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="cy"/>
+
+                                <TextView
+                                    android:id="@+id/txtResultCy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </TableRow>
+
+                            <TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="cx"/>
+
+                                <TextView
+                                    android:id="@+id/txtResultCx"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </TableRow>
+
+                            <TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="iz"/>
+
+                                <TextView
+                                    android:id="@+id/txtResultIz"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </TableRow>
+
+                            <TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="iy"/>
+
+                                <TextView
+                                    android:id="@+id/txtResultIy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </TableRow>
+
+                            <TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="scgz"/>
+
+                                <TextView
+                                    android:id="@+id/txtResultScgz"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </TableRow>
+
+                            <TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="scgy"/>
+
+                                <TextView
+                                    android:id="@+id/txtResultScgy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </TableRow>
+
+                            <TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="kz"/>
+
+                                <TextView
+                                    android:id="@+id/txtResultKz"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </TableRow>
+
+                            <TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="ky"/>
+
+                                <TextView
+                                    android:id="@+id/txtResultKy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </TableRow>
+                        </TableLayout>
+                        -->
+
+                    </LinearLayout>
+
+                    <!-- L LAYOUT -->
+                    <LinearLayout
+                        android:id="@+id/lLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:src="@drawable/l_section_lettered"
+                            android:scaleType="fitCenter"/>
+
+                        <TableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="y:"
+                                    android:textColor="#8c8c8c" />
+
+                                <EditText
+                                    android:id="@+id/LLayoutEntryY"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="k:"
+                                    android:textColor="#8c8c8c">
+
+                                </TextView>
+
+                                <EditText
+                                    android:id="@+id/LLayoutEntryK"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="x:"
+                                    android:textColor="#8c8c8c">
+
+                                </TextView>
+
+                                <EditText
+                                    android:id="@+id/LLayoutEntryX"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="u:"
+                                    android:textColor="#8c8c8c" />
+
+                                <EditText
+                                    android:id="@+id/LLayoutEntryU"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                        </TableLayout>
+
+                    </LinearLayout>
+
+                    <!-- U LAYOUT -->
+                    <LinearLayout
+                        android:id="@+id/uLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical">>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:src="@drawable/u_section_lettered"
+                            android:scaleType="fitCenter"/>
+
+                        <TableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="x:"
+                                    android:textColor="#8c8c8c" />
+
+                                <EditText
+                                    android:id="@+id/ULayoutEntryX"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="y:"
+                                    android:textColor="#8c8c8c">
+
+                                </TextView>
+
+                                <EditText
+                                    android:id="@+id/ULayoutEntryY"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="a:"
+                                    android:textColor="#8c8c8c">
+
+                                </TextView>
+
+                                <EditText
+                                    android:id="@+id/ULayoutEntryA"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="h:"
+                                    android:textColor="#8c8c8c" />
+
+                                <EditText
+                                    android:id="@+id/ULayoutEntryH"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                        </TableLayout>
+
+                    </LinearLayout>
+
+                    <!-- C LAYOUT -->
+                    <LinearLayout
+                        android:id="@+id/cLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical">>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:src="@drawable/c_section_lettered"
+                            android:scaleType="fitCenter"/>
+
+                        <TableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="b:"
+                                    android:textColor="#8c8c8c" />
+
+                                <EditText
+                                    android:id="@+id/CLayoutEntryB"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="y:"
+                                    android:textColor="#8c8c8c">
+
+                                </TextView>
+
+                                <EditText
+                                    android:id="@+id/CLayoutEntryH"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="a:"
+                                    android:textColor="#8c8c8c">
+
+                                </TextView>
+
+                                <EditText
+                                    android:id="@+id/CLayoutEntryA"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="h:"
+                                    android:textColor="#8c8c8c" />
+
+                                <EditText
+                                    android:id="@+id/CLayoutEntryM"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                        </TableLayout>
+
+                    </LinearLayout>
+
+                    <!-- I LAYOUT -->
+                    <LinearLayout
+                        android:id="@+id/iLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical">>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:src="@drawable/i_section_lettered"
+                            android:scaleType="fitCenter"/>
+
+                        <TableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="w:"
+                                    android:textColor="#8c8c8c" />
+
+                                <EditText
+                                    android:id="@+id/ILayoutEntryW"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="y:"
+                                    android:textColor="#8c8c8c">
+
+                                </TextView>
+
+                                <EditText
+                                    android:id="@+id/ILayoutEntryH"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                        </TableLayout>
+
+                    </LinearLayout>
+
+                    <!-- H LAYOUT -->
+                    <LinearLayout
+                        android:id="@+id/hLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical">>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:src="@drawable/h_section_lettered"
+                            android:scaleType="fitCenter"/>
+
+                        <TableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="x:"
+                                    android:textColor="#8c8c8c" />
+
+                                <EditText
+                                    android:id="@+id/HLayoutEntryX"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="y:"
+                                    android:textColor="#8c8c8c">
+
+                                </TextView>
+
+                                <EditText
+                                    android:id="@+id/HLayoutEntryY"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="a:"
+                                    android:textColor="#8c8c8c" />
+
+                                <EditText
+                                    android:id="@+id/HLayoutEntryA"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="d:"
+                                    android:textColor="#8c8c8c">
+
+                                </TextView>
+
+                                <EditText
+                                    android:id="@+id/HLayoutEntryD"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="h:"
+                                    android:textColor="#8c8c8c" />
+
+                                <EditText
+                                    android:id="@+id/HLayoutEntryH"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="r:"
+                                    android:textColor="#8c8c8c">
+
+                                </TextView>
+
+                                <EditText
+                                    android:id="@+id/HLayoutEntryR"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+
+                        </TableLayout>
+
+                    </LinearLayout>
+
+                    <!-- RESULT LAYOUT -->
                     <TableLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:id="@+id/resultLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:paddingTop="10dp"
+                        android:paddingHorizontal="30dp">
 
                         <TableRow>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Área"/>
+                                android:text="Área:"
+                                android:textColor="#8c8c8c" />
 
                             <TextView
                                 android:id="@+id/txtResultArea"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:textColor="#8c8c8c" />
                         </TableRow>
 
                         <TableRow>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Perímetro"/>
+                                android:text="Perímetro:"
+                                android:textColor="#8c8c8c"
+                                android:paddingRight="3dp"/>
 
                             <TextView
                                 android:id="@+id/txtResultPerimeter"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:textColor="#8c8c8c" />
                         </TableRow>
 
                         <TableRow>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="cy"/>
+                                android:text="cy:"
+                                android:textColor="#8c8c8c" />
 
                             <TextView
                                 android:id="@+id/txtResultCy"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:textColor="#8c8c8c" />
                         </TableRow>
 
                         <TableRow>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="cx"/>
+                                android:text="cx:"
+                                android:textColor="#8c8c8c" />
 
                             <TextView
                                 android:id="@+id/txtResultCx"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:textColor="#8c8c8c" />
                         </TableRow>
 
                         <TableRow>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="iz"/>
+                                android:text="iz:"
+                                android:textColor="#8c8c8c" />
 
                             <TextView
                                 android:id="@+id/txtResultIz"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:textColor="#8c8c8c" />
                         </TableRow>
 
                         <TableRow>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="iy"/>
+                                android:text="iy:"
+                                android:textColor="#8c8c8c" />
 
                             <TextView
                                 android:id="@+id/txtResultIy"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:textColor="#8c8c8c" />
                         </TableRow>
 
                         <TableRow>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="scgz"/>
+                                android:text="scgz:"
+                                android:textColor="#8c8c8c" />
 
                             <TextView
                                 android:id="@+id/txtResultScgz"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:textColor="#8c8c8c" />
                         </TableRow>
 
                         <TableRow>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="scgy"/>
+                                android:text="scgy:"
+                                android:textColor="#8c8c8c" />
 
                             <TextView
                                 android:id="@+id/txtResultScgy"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:textColor="#8c8c8c" />
                         </TableRow>
 
                         <TableRow>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="kz"/>
+                                android:text="kz:"
+                                android:textColor="#8c8c8c" />
 
                             <TextView
                                 android:id="@+id/txtResultKz"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:textColor="#8c8c8c" />
                         </TableRow>
 
                         <TableRow>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="ky"/>
+                                android:text="ky:"
+                                android:textColor="#8c8c8c" />
 
                             <TextView
                                 android:id="@+id/txtResultKy"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:textColor="#8c8c8c" />
                         </TableRow>
                     </TableLayout>
-                    -->
 
                 </LinearLayout>
 
-                <!-- L LAYOUT -->
+                <!-- MENU LAYOUT-->
                 <LinearLayout
-                    android:id="@+id/lLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:orientation="vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:src="@drawable/l_section_lettered"
+                    <ImageButton
+                        android:id="@+id/btnCalculate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/btn_calculate"
+                        android:background="@null"
+                        android:layout_marginHorizontal="5dp"
                         android:scaleType="fitCenter"/>
 
-                    <TableLayout
+                    <ImageButton
+                        android:id="@+id/btnDiscard"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="y:"
-                                android:textColor="#8c8c8c" />
-
-                            <EditText
-                                android:id="@+id/LLayoutEntryY"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="k:"
-                                android:textColor="#8c8c8c">
-
-                            </TextView>
-
-                            <EditText
-                                android:id="@+id/LLayoutEntryK"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="x:"
-                                android:textColor="#8c8c8c">
-
-                            </TextView>
-
-                            <EditText
-                                android:id="@+id/LLayoutEntryX"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="u:"
-                                android:textColor="#8c8c8c" />
-
-                            <EditText
-                                android:id="@+id/LLayoutEntryU"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                    </TableLayout>
-
-                </LinearLayout>
-
-                <!-- U LAYOUT -->
-                <LinearLayout
-                    android:id="@+id/uLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:orientation="vertical">>
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:src="@drawable/u_section_lettered"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/btn_discard"
+                        android:background="@null"
+                        android:layout_marginHorizontal="5dp"
                         android:scaleType="fitCenter"/>
 
-                    <TableLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="x:"
-                                android:textColor="#8c8c8c" />
-
-                            <EditText
-                                android:id="@+id/ULayoutEntryX"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="y:"
-                                android:textColor="#8c8c8c">
-
-                            </TextView>
-
-                            <EditText
-                                android:id="@+id/ULayoutEntryY"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="a:"
-                                android:textColor="#8c8c8c">
-
-                            </TextView>
-
-                            <EditText
-                                android:id="@+id/ULayoutEntryA"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="h:"
-                                android:textColor="#8c8c8c" />
-
-                            <EditText
-                                android:id="@+id/ULayoutEntryH"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                    </TableLayout>
-
                 </LinearLayout>
 
-                <!-- C LAYOUT -->
-                <LinearLayout
-                    android:id="@+id/cLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:orientation="vertical">>
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:src="@drawable/c_section_lettered"
-                        android:scaleType="fitCenter"/>
+            </LinearLayout>
 
-                    <TableLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+            <!-- INFO LAYOUT -->
+            <LinearLayout
+                android:id="@+id/infoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:gravity="center">
 
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="b:"
-                                android:textColor="#8c8c8c" />
-
-                            <EditText
-                                android:id="@+id/CLayoutEntryB"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="y:"
-                                android:textColor="#8c8c8c">
-
-                            </TextView>
-
-                            <EditText
-                                android:id="@+id/CLayoutEntryH"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="a:"
-                                android:textColor="#8c8c8c">
-
-                            </TextView>
-
-                            <EditText
-                                android:id="@+id/CLayoutEntryA"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="h:"
-                                android:textColor="#8c8c8c" />
-
-                            <EditText
-                                android:id="@+id/CLayoutEntryM"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                    </TableLayout>
-
-                </LinearLayout>
-
-                <!-- I LAYOUT -->
-                <LinearLayout
-                    android:id="@+id/iLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:orientation="vertical">>
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:src="@drawable/i_section_lettered"
-                        android:scaleType="fitCenter"/>
-
-                    <TableLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="w:"
-                                android:textColor="#8c8c8c" />
-
-                            <EditText
-                                android:id="@+id/ILayoutEntryW"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="y:"
-                                android:textColor="#8c8c8c">
-
-                            </TextView>
-
-                            <EditText
-                                android:id="@+id/ILayoutEntryH"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                    </TableLayout>
-
-                </LinearLayout>
-
-                <!-- H LAYOUT -->
-                <LinearLayout
-                    android:id="@+id/hLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:orientation="vertical">>
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:src="@drawable/h_section_lettered"
-                        android:scaleType="fitCenter"/>
-
-                    <TableLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="x:"
-                                android:textColor="#8c8c8c" />
-
-                            <EditText
-                                android:id="@+id/HLayoutEntryX"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="y:"
-                                android:textColor="#8c8c8c">
-
-                            </TextView>
-
-                            <EditText
-                                android:id="@+id/HLayoutEntryY"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="a:"
-                                android:textColor="#8c8c8c" />
-
-                            <EditText
-                                android:id="@+id/HLayoutEntryA"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="d:"
-                                android:textColor="#8c8c8c">
-
-                            </TextView>
-
-                            <EditText
-                                android:id="@+id/HLayoutEntryD"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="h:"
-                                android:textColor="#8c8c8c" />
-
-                            <EditText
-                                android:id="@+id/HLayoutEntryH"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="r:"
-                                android:textColor="#8c8c8c">
-
-                            </TextView>
-
-                            <EditText
-                                android:id="@+id/HLayoutEntryR"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="numberDecimal"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-
-                    </TableLayout>
-
-                </LinearLayout>
-
-                <!-- RESULT LAYOUT -->
                 <TableLayout
-                    android:id="@+id/resultLayout"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:paddingTop="10dp"
-                    android:paddingHorizontal="30dp">
+                    android:layout_height="wrap_content">
 
-                    <TableRow>
-
+                    <TableRow
+                        android:gravity="center_horizontal">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Área:"
-                            android:textColor="#8c8c8c" />
-
-                        <TextView
-                            android:id="@+id/txtResultArea"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:textColor="#8c8c8c" />
-                    </TableRow>
-
-                    <TableRow>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Perímetro:"
+                            android:text="Desenvolvedor"
+                            android:textSize="10pt"
                             android:textColor="#8c8c8c"
-                            android:paddingRight="3dp"/>
+                            android:gravity="center"/>
+                    </TableRow>
 
+                    <TableRow>
                         <TextView
-                            android:id="@+id/txtResultPerimeter"
-                            android:layout_width="200dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="#8c8c8c" />
+                            android:textSize="16pt"
+                            android:textColor="#303030"
+                            android:text="Hércules Lopes"
+                            android:gravity="center"/>
                     </TableRow>
 
                     <TableRow>
 
                         <TextView
+                            android:id="@+id/linkHerculesLinkedin"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="cy:"
-                            android:textColor="#8c8c8c" />
+                            android:gravity="center"
+                            android:text="@string/linkHerculesLinkedin"
+                            android:textSize="10pt"
+                            android:layout_marginVertical="10dp"/>
 
-                        <TextView
-                            android:id="@+id/txtResultCy"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:textColor="#8c8c8c" />
                     </TableRow>
 
                     <TableRow>
+                        <TextView
+                            android:id="@+id/linkHerculesGithub"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/linkHerculesGithub"
+                            android:textSize="10pt"
+                            android:gravity="center"/>
 
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="20pt">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="cx:"
-                            android:textColor="#8c8c8c" />
-
-                        <TextView
-                            android:id="@+id/txtResultCx"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:textColor="#8c8c8c" />
+                            android:text="Engenheiro Civil"
+                            android:textColor="#8c8c8c"
+                            android:textSize="10pt"
+                            android:gravity="center"/>
                     </TableRow>
 
                     <TableRow>
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="iz:"
-                            android:textColor="#8c8c8c" />
-
-                        <TextView
-                            android:id="@+id/txtResultIz"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:textColor="#8c8c8c" />
+                            android:text="Alex Gomes"
+                            android:textColor="#303030"
+                            android:textSize="16pt"
+                            android:gravity="center"/>
                     </TableRow>
 
                     <TableRow>
-
                         <TextView
+                            android:id="@+id/linkAlexLinkedin"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="iy:"
-                            android:textColor="#8c8c8c" />
+                            android:text="@string/linkAlexLinkedin"
+                            android:textSize="10pt"
+                            android:gravity="center"
+                            android:layout_marginVertical="10dp"/>
 
-                        <TextView
-                            android:id="@+id/txtResultIy"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:textColor="#8c8c8c" />
                     </TableRow>
 
                     <TableRow>
-
                         <TextView
+                            android:id="@+id/linkAlexGithub"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="scgz:"
-                            android:textColor="#8c8c8c" />
+                            android:text="@string/linkAlexGithub"
+                            android:textSize="10pt"
+                            android:gravity="center"/>
 
-                        <TextView
-                            android:id="@+id/txtResultScgz"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:textColor="#8c8c8c" />
-                    </TableRow>
-
-                    <TableRow>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="scgy:"
-                            android:textColor="#8c8c8c" />
-
-                        <TextView
-                            android:id="@+id/txtResultScgy"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:textColor="#8c8c8c" />
-                    </TableRow>
-
-                    <TableRow>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="kz:"
-                            android:textColor="#8c8c8c" />
-
-                        <TextView
-                            android:id="@+id/txtResultKz"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:textColor="#8c8c8c" />
-                    </TableRow>
-
-                    <TableRow>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ky:"
-                            android:textColor="#8c8c8c" />
-
-                        <TextView
-                            android:id="@+id/txtResultKy"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:textColor="#8c8c8c" />
                     </TableRow>
                 </TableLayout>
 
             </LinearLayout>
 
-            <!-- MENU LAYOUT-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/btnCalculate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/btn_calculate"
-                    android:background="@null"
-                    android:layout_marginHorizontal="5dp"
-                    android:scaleType="fitCenter"/>
-
-                <ImageButton
-                    android:id="@+id/btnDiscard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/btn_discard"
-                    android:background="@null"
-                    android:layout_marginHorizontal="5dp"
-                    android:scaleType="fitCenter"/>
-
-            </LinearLayout>
-
         </LinearLayout>
-            
+
     </LinearLayout>
     
 </RelativeLayout>

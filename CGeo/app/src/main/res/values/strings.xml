@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">C-Geo</string>
+    
+    <!-- LINKS -->
+    <string name="linkHerculesLinkedin">&lt;a href="http://www.linkedin.com/in/herculeslopes">Linkedin&lt;/a></string>
+    <string name="linkHerculesGithub">&lt;a href="http://www.github.com/herculeslopes">Github&lt;/a</string>
+
+    <string name="linkAlexLinkedin">&lt;a href="http://www.linkedin.com/in/alex-gomes-eng-civil">Linkedin&lt;/a</string>
+    <string name="linkAlexGithub">&lt;a href="http://www.github.com/alexlecao">Github&lt;/a</string>
+
 </resources>

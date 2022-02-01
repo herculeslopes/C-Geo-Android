@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,10 +20,11 @@ import com.example.cgeo.Functions;
 import com.example.cgeo.sections.*;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private LinearLayout currentLayout;
+    private LinearLayout sectionsLayout, infoLayout, currentLayout;
     private TableLayout resultLayout;
 
     private ImageView btnTLayout, btnLLayout, btnULayout, btnCLayout, btnILayout, btnHLayout,
+                    btnInfoLayout,
                         btnCalculate, btnDiscard;
 
     private EditText tLayoutEntryX, tLayoutEntryB, tLayoutEntryY, tLayoutEntryZ,
@@ -32,7 +36,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView txtResultArea, txtResultPerimeter, txtResultCy, txtResultCx, txtResultIz, txtResultIy, txtResultScgz, txtResultScgy, txtResultKz, txtResultKy;
 
-    private double area;
+    // Links
+    private TextView linkHerculesLinkedin, linkHerculesGithub,
+                    linkAlexLinkedin, linkAlexGithub;
+
+//    private double area;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         setWidgets();
+        setContactLinks();
+
 //        setSidebarFunctions();
         btnTLayout.setOnClickListener(this);
         btnLLayout.setOnClickListener(this);
@@ -48,10 +58,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnILayout.setOnClickListener(this);
         btnHLayout.setOnClickListener(this);
 
+        btnInfoLayout.setOnClickListener(this);
+
         setLayoutMenuFunctions();
     }
 
     public void setWidgets() {
+        sectionsLayout = findViewById(R.id.sectionsLayout);
+        infoLayout = findViewById(R.id.infoLayout);
         currentLayout = findViewById(R.id.tLayout);
         resultLayout = findViewById(R.id.resultLayout);
 
@@ -62,6 +76,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnCLayout = findViewById(R.id.btnCLayout);
         btnILayout = findViewById(R.id.btnILayout);
         btnHLayout = findViewById(R.id.btnHLayout);
+
+        btnInfoLayout = findViewById(R.id.btnInfoLayout);
 
         // T Layout Widgets
         tLayoutEntryX = findViewById(R.id.TLayoutEntryX);
@@ -115,6 +131,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnCalculate = findViewById(R.id.btnCalculate);
         btnDiscard = findViewById(R.id.btnDiscard);
 //        txtTest = findViewById(R.id.txtTest);
+
+        // Contact Links
+        linkHerculesLinkedin = (TextView) findViewById(R.id.linkHerculesLinkedin);
+        linkHerculesGithub = findViewById(R.id.linkHerculesGithub);
+
+        linkAlexLinkedin = findViewById(R.id.linkAlexLinkedin);
+        linkAlexGithub = findViewById(R.id.linkAlexGithub);
+    }
+
+    public void setContactLinks() {
+        linkHerculesLinkedin.setMovementMethod(LinkMovementMethod.getInstance());
+        linkHerculesLinkedin.setText(Html.fromHtml(getResources().getString(R.string.linkHerculesLinkedin)));
+
+        linkHerculesGithub.setMovementMethod(LinkMovementMethod.getInstance());
+        linkHerculesGithub.setText(Html.fromHtml(getResources().getString(R.string.linkHerculesGithub)));
+
+        linkAlexLinkedin.setMovementMethod(LinkMovementMethod.getInstance());
+        linkAlexLinkedin.setText(Html.fromHtml(getResources().getString(R.string.linkAlexLinkedin)));
+
+        linkAlexGithub.setMovementMethod(LinkMovementMethod.getInstance());
+        linkAlexGithub.setText(Html.fromHtml(getResources().getString(R.string.linkAlexGithub)));
     }
 
     @Override
@@ -123,6 +160,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d("id: ", Integer.toString(id));
         if (id == R.id.btnTLayout || id == R.id.btnLLayout || id == R.id.btnULayout || id == R.id.btnCLayout ||
                 id == R.id.btnILayout || id == R.id.btnHLayout) {
+
+
+            sectionsLayout.setVisibility(View.VISIBLE);
             currentLayout.setVisibility(View.GONE);
             resultLayout.setVisibility(View.VISIBLE);
 
@@ -145,10 +185,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 case R.id.btnHLayout:
                     currentLayout = findViewById(R.id.hLayout);
                     break;
+                case R.id.btnInfoLayout:
+                    currentLayout = findViewById(R.id.infoLayout);
+                    break;
             }
             currentLayout.setVisibility(View.VISIBLE);
-        } else {
+        } else if (id == R.id.btnInfoLayout){
+            sectionsLayout.setVisibility(View.GONE);
             resultLayout.setVisibility(View.GONE);
+            currentLayout.setVisibility(View.GONE);
+            infoLayout.setVisibility(View.VISIBLE);
         }
     }
 
@@ -335,6 +381,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
+
+
 
     @SuppressLint("SetTextI18n")
     public <T extends  Section> void showSectionResults(T section) {
