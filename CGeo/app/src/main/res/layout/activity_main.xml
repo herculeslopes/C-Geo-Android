@@ -75,15 +75,21 @@
                 android:layout_marginVertical="2dp"
                 android:scaleType="fitCenter"/>
 
-            <ImageButton
-                android:id="@+id/btnInfoLayout"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="2dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/btn_info_layout" />
+                android:layout_height="match_parent"
+                android:gravity="bottom">
+                <ImageButton
+                    android:id="@+id/btnInfoLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="2dp"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/btn_info_layout" />
+            </LinearLayout>
+
 
         </LinearLayout>
 
@@ -111,13 +117,13 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="5"
+                    android:layout_weight="6"
                     android:gravity="top|center"
                     tools:ignore="NestedWeights"
                     android:paddingTop="30dp">
@@ -814,165 +820,182 @@
                     </LinearLayout>
 
                     <!-- RESULT LAYOUT -->
-                    <TableLayout
-                        android:id="@+id/resultLayout"
+                    <ScrollView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        android:paddingTop="10dp"
-                        android:paddingHorizontal="30dp">
+                        android:scrollbars="none">
 
-                        <TableRow>
+                        <TableLayout
+                            android:id="@+id/resultLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            android:paddingTop="10dp"
+                            android:paddingHorizontal="30dp">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Área:"
-                                android:textColor="#8c8c8c" />
+                            <TableRow>
 
-                            <TextView
-                                android:id="@+id/txtResultArea"
-                                android:layout_width="200dp"
-                                android:layout_height="wrap_content"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Área:"
+                                    android:textColor="#303030"
+                                    android:textSize="8pt" />
 
-                        <TableRow>
+                                <TextView
+                                    android:id="@+id/txtResultArea"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Perímetro:"
-                                android:textColor="#8c8c8c"
-                                android:paddingRight="3dp"/>
+                            <TableRow>
 
-                            <TextView
-                                android:id="@+id/txtResultPerimeter"
-                                android:layout_width="200dp"
-                                android:layout_height="wrap_content"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingRight="3dp"
+                                    android:text="Perímetro:"
+                                    android:textColor="#303030"
+                                    android:textSize="8pt" />
 
-                        <TableRow>
+                                <TextView
+                                    android:id="@+id/txtResultPerimeter"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="cy:"
-                                android:textColor="#8c8c8c" />
+                            <TableRow>
 
-                            <TextView
-                                android:id="@+id/txtResultCy"
-                                android:layout_width="200dp"
-                                android:layout_height="wrap_content"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="cy:"
+                                    android:textColor="#303030"
+                                    android:textSize="8pt" />
 
-                        <TableRow>
+                                <TextView
+                                    android:id="@+id/txtResultCy"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="cx:"
-                                android:textColor="#8c8c8c" />
+                            <TableRow>
 
-                            <TextView
-                                android:id="@+id/txtResultCx"
-                                android:layout_width="200dp"
-                                android:layout_height="wrap_content"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="cx:"
+                                    android:textColor="#303030"
+                                    android:textSize="8pt" />
 
-                        <TableRow>
+                                <TextView
+                                    android:id="@+id/txtResultCx"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="iz:"
-                                android:textColor="#8c8c8c" />
+                            <TableRow>
 
-                            <TextView
-                                android:id="@+id/txtResultIz"
-                                android:layout_width="200dp"
-                                android:layout_height="wrap_content"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="iz:"
+                                    android:textColor="#303030"
+                                    android:textSize="8pt" />
 
-                        <TableRow>
+                                <TextView
+                                    android:id="@+id/txtResultIz"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="iy:"
-                                android:textColor="#8c8c8c" />
+                            <TableRow>
 
-                            <TextView
-                                android:id="@+id/txtResultIy"
-                                android:layout_width="200dp"
-                                android:layout_height="wrap_content"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="iy:"
+                                    android:textColor="#303030"
+                                    android:textSize="8pt" />
 
-                        <TableRow>
+                                <TextView
+                                    android:id="@+id/txtResultIy"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="scgz:"
-                                android:textColor="#8c8c8c" />
+                            <TableRow>
 
-                            <TextView
-                                android:id="@+id/txtResultScgz"
-                                android:layout_width="200dp"
-                                android:layout_height="wrap_content"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="scgz:"
+                                    android:textColor="#303030"
+                                    android:textSize="8pt" />
 
-                        <TableRow>
+                                <TextView
+                                    android:id="@+id/txtResultScgz"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="scgy:"
-                                android:textColor="#8c8c8c" />
+                            <TableRow>
 
-                            <TextView
-                                android:id="@+id/txtResultScgy"
-                                android:layout_width="200dp"
-                                android:layout_height="wrap_content"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="scgy:"
+                                    android:textColor="#303030"
+                                    android:textSize="8pt" />
 
-                        <TableRow>
+                                <TextView
+                                    android:id="@+id/txtResultScgy"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="kz:"
-                                android:textColor="#8c8c8c" />
+                            <TableRow>
 
-                            <TextView
-                                android:id="@+id/txtResultKz"
-                                android:layout_width="200dp"
-                                android:layout_height="wrap_content"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="kz:"
+                                    android:textColor="#303030"
+                                    android:textSize="8pt" />
 
-                        <TableRow>
+                                <TextView
+                                    android:id="@+id/txtResultKz"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="ky:"
-                                android:textColor="#8c8c8c" />
+                            <TableRow>
 
-                            <TextView
-                                android:id="@+id/txtResultKy"
-                                android:layout_width="200dp"
-                                android:layout_height="wrap_content"
-                                android:textColor="#8c8c8c" />
-                        </TableRow>
-                    </TableLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="ky:"
+                                    android:textColor="#303030"
+                                    android:textSize="8pt" />
+
+                                <TextView
+                                    android:id="@+id/txtResultKy"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#8c8c8c" />
+                            </TableRow>
+                        </TableLayout>
+
+                    </ScrollView>
 
                 </LinearLayout>
 

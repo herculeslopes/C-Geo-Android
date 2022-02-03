@@ -198,76 +198,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    /*
-    public void setSidebarFunctions() {
-        btnTLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                currentLayout.setVisibility(View.GONE);
-                currentLayout = findViewById(R.id.tLayout);
-                currentLayout.setVisibility(View.VISIBLE);
-
-                clearResults();
-            }
-        });
-
-        btnLLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                currentLayout.setVisibility(View.GONE);
-                currentLayout = findViewById(R.id.lLayout);
-                currentLayout.setVisibility(View.VISIBLE);
-
-                clearResults();
-            }
-        });
-
-        btnULayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                currentLayout.setVisibility(View.GONE);
-                currentLayout = findViewById(R.id.uLayout);
-                currentLayout.setVisibility(View.VISIBLE);
-
-                clearResults();
-            }
-        });
-
-        btnCLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                currentLayout.setVisibility(View.GONE);
-                currentLayout = findViewById(R.id.cLayout);
-                currentLayout.setVisibility(View.VISIBLE);
-
-                clearResults();
-            }
-        });
-
-        btnILayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                currentLayout.setVisibility(View.GONE);
-                currentLayout = findViewById(R.id.iLayout);
-                currentLayout.setVisibility(View.VISIBLE);
-
-                clearResults();
-            }
-        });
-
-        btnHLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                currentLayout.setVisibility(View.GONE);
-                currentLayout = findViewById(R.id.hLayout);
-                currentLayout.setVisibility(View.VISIBLE);
-
-                clearResults();
-            }
-        });
-    }
-    */
-
     public void setLayoutMenuFunctions() {
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -386,16 +316,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @SuppressLint("SetTextI18n")
     public <T extends  Section> void showSectionResults(T section) {
-        txtResultArea.setText(Double.toString(section.getArea()));
-        txtResultPerimeter.setText(Double.toString(section.getPerimeter()));
-        txtResultCy.setText(Double.toString(section.getCy()));
-        txtResultCx.setText(Double.toString(section.getCx()));
-        txtResultIz.setText(Double.toString(section.getIz()));
-        txtResultIy.setText(Double.toString(section.getIy()));
-        txtResultScgz.setText(Double.toString(section.getScgz()));
-        txtResultScgy.setText(Double.toString(section.getScgy()));
-        txtResultKz.setText(Double.toString(section.getKz()));
-        txtResultKy.setText(Double.toString(section.getKy()));
+        txtResultArea.setText(section.getArea() + " cm²");
+        txtResultPerimeter.setText(section.getPerimeter() + " cm");
+        txtResultCy.setText(section.getCy() + " cm");
+        txtResultCx.setText(section.getCx() + " cm");
+        txtResultIz.setText(section.getIz() + " cm⁴");
+        txtResultIy.setText(section.getIy() + " cm⁴");
+        txtResultScgz.setText(section.getScgz() + " cm³");
+        txtResultScgy.setText(section.getScgy() + " cm³");
+        txtResultKz.setText(section.getKz() + " cm²");
+        txtResultKy.setText(section.getKy() + " cm²");
     }
 
     public void clearResults() {
